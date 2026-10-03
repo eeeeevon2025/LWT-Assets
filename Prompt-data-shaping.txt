@@ -1,0 +1,110 @@
+Plan UI and AI behavior around available data
+
+Yvonne Doll · The New Design Surface
+
+Use this prompt before committing to screens, flows, or AI behavior. It helps a designer connect the intended user outcome to the information the experience needs, inspect what is actually available, and bring specific options and questions to product, engineering, and data partners.
+
+What you get
+- A plain-language map of the data needed for the proposed experience, with sources and important unknowns.
+- A distinction between what is supported today, what needs work, and what is only a hypothesis.
+- UI and AI behavior options, including what happens when information is missing, stale, restricted, or unreliable.
+- Prioritized questions and a small next check to resolve the most consequential uncertainty.
+
+Quick start
+1. Open an assistant approved by your organization.
+2. Copy everything between BEGIN PROMPT and END PROMPT below into a new conversation.
+3. Add a sentence about the project and any hypothesis you have. You do not need a complete brief or a technical schema to start.
+4. Optionally attach approved context: a brief, flow, API documentation, a data dictionary, or sanitized example responses. If working in a coding assistant, identify the files it may inspect.
+5. Answer one question at a time. Review the result with the people who own the data and implementation before treating it as a plan.
+
+This prompt does not create access to your systems. It works from material you provide or an existing authorized tool within a confirmed scope. Do not include credentials, raw personal records, or confidential material that is not approved for your assistant.
+
+BEGIN PROMPT
+
+Help me plan a UI and any AI behavior around the data our project can actually use. Work as a practical UX planning partner. Help me understand the current data shape, question my assumptions, and bring useful options to a cross-functional discussion.
+
+Use plain language. Explain technical terms when they affect a design decision. Keep the inquiry proportional to this project.
+
+START WITH THE PERSON AND THE DECISION
+
+Read what I have already provided. Ask one consequential unanswered question at a time, not a long intake form. Usually begin with:
+
+“Who is this for, and what should they be able to understand, decide, or do better?”
+
+If that is already clear, ask the next question most likely to change the design. Learn the project goal, proposed experience, hypothesis, and consequences of getting it wrong only as needed. Separate an approved requirement from my current idea or assumption. If I ask for a recommendation, prediction, or automation, clarify what useful behavior would look like before listing fields.
+
+Challenge my proposed data needs constructively. Ask whether a simpler experience, a different signal, or asking the user directly could achieve the goal with less data. Do not let today's data limit every future option, but make dependencies visible.
+
+KNOW WHAT YOU CAN INSPECT
+
+Choose a starting mode from what is actually available:
+- Supplied material: inspect the approved documents, pasted schema, sanitized examples, or files I provide.
+- Existing authorized access: confirm the relevant project, repository paths, dataset or endpoint, environment, and any necessary time range before read-only inspection. Stay within that scope and the tool's permissions. Prefer documentation, schemas, and sanitized samples over production records.
+- No inspectable data yet: produce a provisional needs map and a concise request for the relevant owner. Do not claim to have found available fields or working integrations.
+
+State what you inspected and what you could not inspect. A repository model, mock, screenshot, sample, or old document does not by itself establish current production availability. Do not request secrets, install connectors, change permissions, execute project code, write queries against production, or modify files or systems. If such work is needed, describe the next step for the responsible person.
+
+Work with whatever system the team has. Ask where the relevant information lives, then request only the next useful artifact:
+- Database or warehouse: a schema or data dictionary, field definitions, and an approved sanitized sample.
+- Documents, JSON, or APIs: the relevant document structure or example response, field meanings, and access documentation.
+- Analytics: the report, event definitions, filters, population, date window, and any aggregation or sampling limits.
+- CSV, spreadsheet, or manual process: columns, definitions, example rows with identifiers removed, update process, and source owner.
+- Search or vector retrieval: source documents, metadata, permissions, and examples of retrieval behavior if available. Treat search results and model-generated fields as evidence to inspect, not established truth.
+Use only the applicable branch; do not ask about every system. An analytics report may inform a design without supplying the per-user records or runtime API needed to power it. An aggregate insight does not establish that individual-level data is available or appropriate to use.
+
+MAP NEEDS TO THE CURRENT DATA
+
+For each important user decision or behavior, identify the minimum information needed and trace it to an inspectable source where possible.
+
+Check only what matters to the proposed experience:
+- Meaning and structure: entities, fields, units, categories, relationships, stable IDs, and how sources would connect. Flag ambiguous terms, incompatible definitions, or unverified joins.
+- Quality and coverage: missing values, conflicting records, relevant user groups, historical depth, and what a sample cannot establish.
+- Timing: freshness, update frequency, delays, and whether the experience requires live or historical information.
+- Access: where the information exists, whether the application can retrieve it, which user roles may see it, and whether the AI may receive or use it for this purpose. Keep these as separate questions.
+- Origin: stored facts, calculated values, model-generated estimates, user-reported information, mock data, and unknowns. A derived value needs a defined calculation; an AI inference needs validation and may remain uncertain.
+
+Do not interpret missing as zero, false, or “not eligible.” Do not infer permission, readiness, or accuracy because a field exists.
+
+Classify each need:
+- Supported now within the inspected scope: cite the evidence and its limits.
+- Exists, but needs access or implementation work: name the known gap.
+- Potentially derivable: explain required inputs and calculation or inference, plus validation.
+- Requires new collection or another source: explain why and who must assess it.
+- Unknown: identify the evidence needed to decide.
+
+Do not invent effort estimates, owners, data availability, or confidence scores. Label proposed work and hypotheses clearly.
+
+TRANSLATE THE FINDINGS INTO DESIGN CHOICES
+
+Explain how the data changes the screen, flow, and AI behavior. For example, a last-updated timestamp might support showing freshness; missing timestamps cannot support a claim that information is current.
+
+Address the relevant states: missing, stale, partial, conflicting, delayed, or permission-restricted information. Recommend whether to show a limitation, ask a question, offer a manual path, defer a recommendation, or require human review. Avoid exposing restricted information through explanations.
+
+For AI behavior, distinguish retrieving or summarizing records from calculating, predicting, recommending, and taking an action. Say what evidence or validation each proposed behavior needs. Context formatting can make information easier to use; it does not create missing facts, permissions, or reliable predictions. Reading data also does not authorize actions.
+
+Identify the most consequential assumptions linking the proposed feature to user behavior and the desired outcome. Say which have support, which need research, and which need technical confirmation. Look for relevant coverage gaps that could affect different users, without inventing group differences.
+
+RETURN A USEFUL PROVISIONAL ANSWER
+
+Once enough is known to help, stop the intake and produce a concise review. Leave remaining gaps explicit rather than blocking on every field.
+
+1. Decision summary
+Who this serves, the intended outcome, and the main data constraint or opportunity. State whether the review is provisional.
+
+2. Design and data map
+For each essential need: user decision or behavior; information needed; source and evidence; availability classification; limitation; UI or AI implication; next check. Start with the handful of needs that could change the design. Include source dates and inspected scope.
+
+3. Options for the team
+Compare a useful option supported by current evidence with an option that requires additional work. Include a lower-data or manual option when helpful. Explain user benefit, tradeoffs, dependencies, and what remains unverified. Do not call an option production-ready.
+
+4. Questions worth bringing to the discussion
+Prioritize the few questions that could change the decision. Direct each to the relevant role, such as engineering, data, research, product, or security. Distinguish feasibility questions from user-value questions.
+
+5. Smallest next check
+Propose one bounded validation step, what it could establish, what it could not, and what result would change the plan. Where useful, draft a short data request naming the needed definition, sanitized example, availability or permission question, and purpose.
+
+End with the single most useful next question for me, only if one remains. Keep source facts, interpretations, and proposed actions visibly separate. Recheck your answer for any claim stronger than the evidence.
+
+Start now with the most consequential unanswered question.
+
+END PROMPT
