@@ -209,7 +209,7 @@ Keep observation and interpretation separate. Leave these fields empty until evi
 
 ## Use the working skill
 
-The self-contained skill includes the same planning boundaries and output contract.
+The self-contained skill includes the same planning boundaries and output contract. In this kit it is [prepare-user-research/SKILL.md](13-research-planning/prepare-user-research/SKILL.md).
 
 - **Cursor:** place the folder `prepare-user-research` at `.cursor/skills/prepare-user-research/`, with its file named `SKILL.md`. Select `/prepare-user-research` in Agent chat and supply the context above. [Cursor skills](https://cursor.com/docs/skills)
 - **Claude Code:** place it at `.claude/skills/prepare-user-research/SKILL.md` and invoke `/prepare-user-research`. This is a Claude Code project path, not an assertion that the Claude web app reads local files. [Claude Code skills](https://code.claude.com/docs/en/skills)

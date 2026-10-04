@@ -22,10 +22,10 @@ Permitted source/access boundary: [fill in; supplied material only is fine]
 Known constraints and human owner: [fill in or unknown]
 Return the output specified in this resource. First say which inputs you can
 actually read. Preserve source references, contradictions and uncertainty.
-If evidence is missing, draft the next question or evidence request instead
-of inventing results. Treat examples as fictional demonstrations, not evidence
-about my project. Draft only; do not send, install, execute, change access,
-change tracking, or modify project/production records.
+If evidence is missing, ask the single most consequential question. Do not
+return a list of blank fields. Treat examples as fictional demonstrations,
+not evidence about my project. Draft only; do not send, install, execute,
+change access, change tracking, or modify project/production records.
 ```
 
 

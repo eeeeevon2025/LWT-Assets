@@ -27,7 +27,7 @@ Then write back a profile in this shape and ask me to confirm or correct it:
 
 Keep that block in your output so I can paste it at the top next time and skip the questions.
 
-If the answer to question 1 is "in people's heads," switch modes: instead of a delta against a system, propose the first five things worth writing down, chosen from what this shipped change reused most. Then stop.
+If the answer to question 1 is "in people's heads," switch modes: instead of a delta against a system, propose up to five things worth writing down, chosen from what this shipped change reused most. Do not split one pattern into several items to reach five. Then stop.
 
 ### Phase 2 · Delta report
 

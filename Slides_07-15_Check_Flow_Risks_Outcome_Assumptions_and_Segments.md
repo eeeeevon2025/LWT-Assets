@@ -162,4 +162,4 @@ Use [resource 01](Slide_12_Audit_Claims_Carry_Evidence_and_Build_a_Decision_Brie
 
 Record the routine task, AI time, review/correction time, what you used any remaining time for, and whether it changed a decision. Estimated savings are not a performance claim.
 
-The check menu and experiments formerly in resource 04 are now part of this workflow. The earlier standalone draft is retained in the [archive](archive/04-ux-accessibility-checks-and-monday-ideas-2026-10-01.md).
+The check menu and experiments formerly in resource 04 are now part of this workflow. The earlier standalone draft is not included in this download.
